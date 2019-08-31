@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class FilmTests {
-	
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
