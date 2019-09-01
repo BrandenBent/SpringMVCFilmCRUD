@@ -2,11 +2,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>States</title>
+<title>Spring MVC</title>
 </head>
-<body> <!-- NOT COMPLETE TEST PUSH -->
-<h1> TEST </h1>
-<a href="search.jsp">Search Through Database</a><br/>
-<a href="resulst.jsp">Make Changes to Database</a><br/>
+<body>
+	<!-- NOT COMPLETE TEST PUSH -->
+	<h1>TEST</h1>
+	<!-- <a href="search.html">Search Through Database</a><br/>
+<a href="results.jsp">Make Changes to Database</a><br/> -->
+
+	<form action="searchKeyword.do" method="GET">
+		Search Keyword in Title or Description <input type="text" name="keyword">
+		<input type="submit" value="Search" />
+	</form>
+	<form action="searchId.do" method="GET">
+		Search FilmId: <input type="number" name="search"> <input
+			type="submit" value="Search by Film Id" />
+	</form>
+	<form action="results.do" method="GET">
+		<input type="submit" value="Put a new Film in the Database" />
+	</form>
 </body>
 </html>
