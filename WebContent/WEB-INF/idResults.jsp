@@ -16,7 +16,7 @@
 	<c:choose>
 		<c:when test="${! empty film}">
 			<ul>
-				<c:forEach var="film" items="${filmbykeyword}">
+				<c:forEach var="film" items="${film}">
 					<h3>Film Details:</h3>
 					<li>${film}</li>
 					<h4>Actors in Film:</h4>
