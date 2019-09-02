@@ -1,4 +1,4 @@
-package com.skilldistillery.film.controllers;
+package src.main.java.com.skilldistillery.film.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
