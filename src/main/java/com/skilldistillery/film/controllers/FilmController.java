@@ -25,7 +25,7 @@ public class FilmController {
 //	    return mv;
 //	  }
 
-	@RequestMapping(path = "searchId.do", params = "id", method = RequestMethod.GET)
+	@RequestMapping(path = "searchid.do", params = "id", method = RequestMethod.GET)
 	public ModelAndView getFilmById(int id) {
 		Film film = null;
 		film = dao.findFilmById(id);
