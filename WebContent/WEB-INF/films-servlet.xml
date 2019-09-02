@@ -11,10 +11,8 @@
    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 	<context:component-scan
-		base-package="com.skilldistillery.film.controllers.FilmController, com.skilldistillery.film.database, com.skilldistillery.film.entities" />
-	<mvc:annotation-driven/>
-	
-	<!-- <bean id="controllery" class="com.skilldistillery.film.controllers.FilmController">
-	</bean> -->
+		base-package="com.skilldistillery.film" />
+	<mvc:annotation-driven />
+	<bean id="dao" class="com.skilldistillery.film.dao.FilmDAOImpl"/> 
 
 </beans>
