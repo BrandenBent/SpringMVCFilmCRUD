@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.film.dao.FilmDAO;
+import com.skilldistillery.film.dao.FilmDAOImpl;
 import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
 @Controller
 public class FilmController {
 	@Autowired
-	FilmDAO dao;
+	FilmDAOImpl dao;
 
 //	  @RequestMapping(path = "searchId.do", params = "search", method = RequestMethod.GET)
 //	  public ModelAndView getFilmById(int filmId) {
@@ -34,20 +35,21 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(film);
 		mv.addObject("film", film);
-		mv.setViewName("WEB-INF/results.jsp");
+		mv.setViewName("WEB-INF/idResults.jsp");
 		return mv;
 	}
 
-	@RequestMapping(path = "getFilmsKeyword.do", params = "keyword", method = RequestMethod.GET)
+	@RequestMapping(path = "filmbykeyword.do", params = "description", method = RequestMethod.GET)
 	public ModelAndView getFilmByKeyword(String keyword) {
 		ModelAndView mv = new ModelAndView();
 		List<Film> films = dao.findFilmByKeyWord(keyword);
 		for (Film film : films) {
 			List<Actor> actors = dao.findActorsByFilmId("" + film.getId());
 			film.setActors(actors);
+			System.out.println(actors);
 		}
-		mv.addObject("filmByKeyword", films);
-		mv.setViewName("WEB-INF/results.jsp");
+		mv.addObject("film", films);
+		mv.setViewName("WEB-INF/keywordResults.jsp");
 		return mv;
 	}
 
