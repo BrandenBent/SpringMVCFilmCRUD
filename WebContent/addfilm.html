@@ -1,68 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta charset="UTF-8">
-<title>Add Film</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AddFilm</title>
 </head>
 <body>
-	<h1>Add New Film</h1>
-	<form method="POST" action="addedFilm.do">
+	<a href="index.html">Home</a>
+	<h3>Add a New Film</h3>
+	<form action="addedFilm.do" method="POST">
+		Title: <input type="text" name="title"> <br> 
+		Description: <input type="text" name="description"> <br> 
+		Release Year: <input type="number" min="1900" name="releaseYear" /> <br> 
+		Category: <select name="categoryId">
+		<option value="1">Action</option>
+		<option value="2">Animation</option>
+		<option value="3">Children</option>
+		<option value="4">Classics</option>
+		<option value="5">Comedy</option>
+		<option value="6">Documentary</option>
+		<option value="7">Drama</option>
+		<option value="8">Family</option>
+		<option value="9">Foreign</option>
+		<option value="10">Games</option>
+		<option value="11">Horror</option>
+		<option value="12">Music</option>
+		<option value="13">New</option>
+		<option value="14">Sci-Fi</option>
+		<option value="15">Sports</option>
+		<option value="16">Travel</option>
+		</select>
+		<br>
+		Language: <select name="languageId">
+		<option value="1">English</option>
+		<option value="2">Italian</option>
+		<option value="3">Japanese</option>
+		<option value="4">Mandarin</option>
+		<option value="5">French</option>
+		<option value="6">German</option>
+		</select>
+		<br>
+		Rental Duration: <input type="number" min="1" name="rentalDuration" /> <br>
+		Rental Rate: <input type="number" min="0.00" step="0.01" name="rentalRate" /> <br>
+		Length: <input type="number" min="1" name="length" /> <br> 
+		Replacement Cost: <input type="number" min="0.01" step="0.01" name="replacementCost" /> <br>
+		Rating: <select name="rating">
+		<option value="G">G</option>
+		<option value="PG">PG</option>
+		<option value="PG13">PG-13</option>
+		<option value="R">R</option>
+		<option value="NC17">NC-17</option>
+		</select>
+		<br> 
+		Special Features: <br><input type="checkbox" name="specialFeatures" value="Trailers"> Trailers <br>
+		<input type="checkbox" name="specialFeatures" value="Commentaries"> Commentaries <br>
+		<input type="checkbox" name="specialFeatures" value="Deleted Scenes"> Deleted Scenes <br>
+		<input type="checkbox" name="specialFeatures" value="Behind the Scenes"> Behind the Scenes <br>
 		
-		Title: <input type="text" path="title" required />
-		<br>
-		Description: <input type="text" path="description" />
-		<br>
-		Release Year: <input type="number" path="releaseYear" min="1950"
-			max="2020" />
-		<br>
-		Language
-		<select path="language">
-			<option value="English">English</option>
-			<option value="Italian">Italian</option>
-			<option value="Japanese">Japanese</option>
-			<option value="Mandarin">Mandarin</option>
-			<option value="French">French</option>
-			<option value="German">German</option>
-		</select>
-		<br>
-		Rental Duration: <input type="number" min="3" max="7"
-			name="rentalDuration" required />
-		<br>
-		Rental Rate
-		<select required>
-			<option value="0.99">0.99</option>
-			<option value="1.99">1.99</option>
-			<option value="2.99">2.99</option>
-			<option value="3.99">3.99</option>
-			<option value="4.99">4.99</option>
-		</select>
-		<br>
-		Length: <input type="number" path="length" min="30" max="300" />
-		<br>
-		Replacement Cost: <input path="replacementCost" type="number"
-			min="2.99" max="50.00" required />
-		<br>
-		Rating <select path="rating">
-			<option value="G">G</option>
-			<option value="PG">PG</option>
-			<option value="PG13">PG13</option>
-			<option value="NC17">NC-17</option>
-			<option value="R">R</option>
-		</select>
-		<br>
-		Special Features<br>
-		<select path="specialFeatures" multiple>
-			<option value="Deleted Scenes">Deleted Scenes</option>
-			<option value="Trailers">Trailers</option>
-			<option value="Commentaries">Commentaries</option>
-			<option value="Behind The Scenes">Behind The Scenes</option>
-		</select>
-		<br>
-		<br>
-
-		<input type="submit" value="Submit" />
-		<input type="button" onclick="history.back()" value="Back">
+		<input type="submit" name="Add New Film">
 	</form>
 </body>
 </html>
