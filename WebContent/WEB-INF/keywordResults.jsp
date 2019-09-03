@@ -8,8 +8,6 @@
 <title>Search</title>
 </head>
 <body>
-	<h1>TEST CONNECTION KEYWORD</h1>
-
 	<a href="index.html">Home</a>
 	<h2>Keyword Search Results</h2>
 	<br>
@@ -28,11 +26,6 @@
 					</c:forEach>
 				</c:forEach> --%>
 				<br>
-				<form action="updated.do" method="GET">
-					<br>
-					<button type="submit">Update/Delete Film</button>
-					<%-- <input type="hidden" name="id" value="${film.id}" /> --%>
-				</form>
 			</ul>
 		</c:when>
 		<c:otherwise>

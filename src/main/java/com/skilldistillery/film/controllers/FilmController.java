@@ -69,12 +69,7 @@ public class FilmController {
 		return mv;
 	}
 
-//<<<<<<< HEAD
-//	@RequestMapping(path = "addFilm.do", params="film",  method=RequestMethod.POST)
-//	public ModelAndView addFilmToDB(Film film) {
-//		ModelAndView mv = new ModelAndView();
-//		film = dao.newFilm(film);
-//=======
+
 	@RequestMapping(path = "addedFilm.do", method = RequestMethod.POST)
 	public String addFilmToDB(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();

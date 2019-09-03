@@ -8,8 +8,6 @@
 <title>Search</title>
 </head>
 <body>
-	<h1>TEST CONNECTION ID</h1>
-
 	<a href="index.html">Home</a>
 	<h2>Keyword Search Results</h2>
 	<br>

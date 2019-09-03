@@ -18,7 +18,7 @@
 			<ul>
 				<li>Title: ${filmNew.title}</li>
 				<li>Description: ${filmNew.description}</li>
-				<li>For more information, your filmds ID is -> ${filmNew.id}</li>
+				<li>For more information, your film's ID is -> ${filmNew.id}</li>
 			</ul>
 		</c:when>
 		<c:otherwise>
@@ -27,13 +27,14 @@
 	</c:choose>
 	<form action="UPDATEFILM.do" method="GET">
 		<br>
-		<button type="submit">Update Film</button>
-		<input type="hidden" name="id" value="${filmAdd.id}" />
+		<%-- <button type="submit">Update Film</button>
+		<input type="hidden" name="id" value="${filmAdd.id}" /> --%>
+		<a href="index.html">Home</a>
 	</form>
-	<form:form action="deleteFilm.do" method="POST" modelAttribute="film">
-		<input type="hidden" name="id" value="${filmAdd.id}" />
-		<input type="submit" name="Delete this Film"
-			value="Delete from Inventory" />
-	</form:form>
+	<form action="UPDATEFILM.do" method="GET">
+						<br>
+						<button type="submit">Update/Delete Film</button>
+						<input type="hidden" name="id" value="${filmNew.id}" />
+					</form>
 </body>
 </html>
