@@ -196,8 +196,8 @@ public class Film {
 		builder.append(rating);
 		builder.append("\nLANGUAGE: ");
 		builder.append(language);
-		builder.append("\nACTORS: ");
-		builder.append(actors);
+//		builder.append("\nACTORS: ");
+//		builder.append(actors);
 		return builder.toString();
 	}
 

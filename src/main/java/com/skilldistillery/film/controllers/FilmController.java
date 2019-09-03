@@ -34,10 +34,10 @@ public class FilmController {
 		System.out.println(film);
 		film = dao.findFilmById(id);
 		ModelAndView mv = new ModelAndView();
-//		if (film != null) {
-//			List<Actor> actors = dao.findActorsByFilmId(film.getId());
-//			mv.addObject("actors", actors);
-//		}
+		if (film != null) {
+			List<Actor> actors = dao.findActorsByFilmId("" + film.getId());
+			mv.addObject("actors", actors);
+		}
 		System.out.println(film);
 		mv.addObject("film", film);
 		mv.setViewName("WEB-INF/idResults.jsp");
