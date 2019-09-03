@@ -57,19 +57,19 @@ public class FilmController {
 		for (Film film : films) {
 			List<Actor> actors = dao.findActorsByFilmId("" + film.getId());
 			film.setActors(actors);
-			mv.addObject("actors", actors);
+			System.out.println(actors);
 		}
 		mv.addObject("film", films);
 		mv.setViewName("WEB-INF/keywordResults.jsp");
 		return mv;
 	}
 
-//	@RequestMapping(path = "addFilm.do",  method = RequestMethod.POST)
-//	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
-//		ModelAndView mv = new ModelAndView();
-//		film
-//		mv.setViewName("WEB-INF/addFilm.jsp");
-//		return mv;
-//	}
+	@RequestMapping(value="/addFilm",  method = RequestMethod.POST)
+	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("film"	);
+		mv.setViewName("WEB-INF/addFilm.jsp");
+		return mv;
+	}
 
 }
