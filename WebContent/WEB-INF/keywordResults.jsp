@@ -8,29 +8,31 @@
 <title>Search</title>
 </head>
 <body>
-<h1>TEST CONNECTION KEYWORD</h1>
+	<h1>TEST CONNECTION KEYWORD</h1>
 
-<a href="index.html">Home</a>
-	<h2>Keyword Search Results</h2>
-	<br>
-		<a href="index.html">Home</a>
+	<a href="index.html">Home</a>
 	<h2>Keyword Search Results</h2>
 	<br>
 	<c:choose>
 		<c:when test="${! empty film}">
 			<ul>
-					<h3>Film Details:</h3>
-					<li>"${film }"</li>
-					<h4>Actors in Film:</h4>
-					<c:forEach var="actor" items="${actors}">
-						<li>"${actor}"</li>
+				<h3>Film Details:</h3>
+				<c:forEach var="film" items="${film}">
+						<li>"${film}"</li>
 					</c:forEach>
+				<!-- <h4>Actors in Film:</h4> -->
+				<!-- This code may be uncommented to list all actors in the description films -->
+				<%-- <c:forEach var="actor" items="${film}">
+					<c:forEach var="film" items="${actors }">
+					<li>"${actor}"</li>
+					</c:forEach>
+				</c:forEach> --%>
+				<br>
+				<form action="updated.do" method="GET">
 					<br>
-					<form action="updated.do" method="GET">
-						<br>
-						<button type="submit">Update/Delete Film</button>
-						<input type="hidden" name="id" value="${film.id}" />
-					</form>
+					<button type="submit">Update/Delete Film</button>
+					<%-- <input type="hidden" name="id" value="${film.id}" /> --%>
+				</form>
 			</ul>
 		</c:when>
 		<c:otherwise>
