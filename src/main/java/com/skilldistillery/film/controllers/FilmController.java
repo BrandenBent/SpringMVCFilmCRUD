@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.film.dao.FilmDAO;
 import com.skilldistillery.film.dao.FilmDAOImpl;
@@ -70,12 +71,21 @@ public class FilmController {
 //		ModelAndView mv = new ModelAndView();
 //		film = dao.newFilm(film);
 //=======
-	@RequestMapping(path="addfilm.do",  method = RequestMethod.POST)
-	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
+	@RequestMapping(path="addedFilm.do",  method = RequestMethod.POST)
+	public String addFilmToDB(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("film"	);
-		mv.setViewName("WEB-INF/addFilm.jsp");
-		return mv;
+		dao.newFilm(film);
+		redir.addFlashAttribute("film", film);
+//		mv.addObject("film", film);
+//		mv.setViewName("WEB-INF/addNewFilm.jsp");
+		return "redirect:addNewFilm.do";
 	}
+	
+    @RequestMapping(path = "addNewFilm.do", method = RequestMethod.GET)
+    public ModelAndView addFilm() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("WEB-INF/addNewFilm.jsp");
+        return mv;
+    }
 
 }

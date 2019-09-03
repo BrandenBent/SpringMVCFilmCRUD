@@ -18,8 +18,8 @@
 			<ul>
 				<h3>Film Details:</h3>
 				<c:forEach var="film" items="${film}">
-						<li>"${film}"</li>
-					</c:forEach>
+					<li>"${film}"</li>
+				</c:forEach>
 				<!-- <h4>Actors in Film:</h4> -->
 				<!-- This code may be uncommented to list all actors in the description films -->
 				<%-- <c:forEach var="actor" items="${film}">

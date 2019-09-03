@@ -10,6 +10,11 @@
 <title>Add Film</title>
 </head>
 <body>
+<%-- <<<<<<< HEAD:WebContent/WEB-INF/addFilmResults.jsp
+	<div>
+		<h1>"${film }"</h1>
+	</div>
+======= --%>
   <form:form action="]" method="GET" modelAttribute="film">
   	<div>
   	<%-- <form type="" --%>
