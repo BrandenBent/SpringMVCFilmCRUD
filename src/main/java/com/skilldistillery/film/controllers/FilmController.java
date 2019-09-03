@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,6 +18,11 @@ import com.skilldistillery.film.entities.Film;
 public class FilmController {
 	@Autowired
 	FilmDAO dao;
+	
+	@ModelAttribute("film")
+	  public Film initFilm() {
+		return new Film(0, null, null, 0, 0, null, null, null);
+	}
 
 //	  @RequestMapping(path = "searchId.do", params = "search", method = RequestMethod.GET)
 //	  public ModelAndView getFilmById(int filmId) {
@@ -58,13 +64,12 @@ public class FilmController {
 		return mv;
 	}
 
-	@RequestMapping(path = "addFilm.do", method = RequestMethod.POST)
-	public ModelAndView addFilmToDB() {
-		Film film = new Film();
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/addFilm.jsp");
-		mv.addObject("Film", film);
-		return mv;
-	}
+//	@RequestMapping(path = "addFilm.do", method = RequestMethod.POST)
+//	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
+//		ModelAndView mv = new ModelAndView();
+//		
+//		mv.setViewName("WEB-INF/addFilm.jsp");
+//		return mv;
+//	}
 
 }
