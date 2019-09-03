@@ -16,7 +16,7 @@ import com.skilldistillery.film.entities.Film;
 @Controller
 public class FilmController {
 	@Autowired
-	FilmDAOImpl dao;
+	FilmDAO dao;
 
 //	  @RequestMapping(path = "searchId.do", params = "search", method = RequestMethod.GET)
 //	  public ModelAndView getFilmById(int filmId) {
@@ -31,8 +31,13 @@ public class FilmController {
 	@RequestMapping(path = "searchid.do", params = "id", method = RequestMethod.GET)
 	public ModelAndView getFilmById(int id) {
 		Film film = null;
+		System.out.println(film);
 		film = dao.findFilmById(id);
 		ModelAndView mv = new ModelAndView();
+//		if (film != null) {
+//			List<Actor> actors = dao.findActorsByFilmId(film.getId());
+//			mv.addObject("actors", actors);
+//		}
 		System.out.println(film);
 		mv.addObject("film", film);
 		mv.setViewName("WEB-INF/idResults.jsp");
@@ -40,9 +45,9 @@ public class FilmController {
 	}
 
 	@RequestMapping(path = "filmbykeyword.do", params = "description", method = RequestMethod.GET)
-	public ModelAndView getFilmByKeyword(String keyword) {
+	public ModelAndView getFilmByKeyword(String description) {
 		ModelAndView mv = new ModelAndView();
-		List<Film> films = dao.findFilmByKeyWord(keyword);
+		List<Film> films = dao.findFilmByKeyWord(description);
 		for (Film film : films) {
 			List<Actor> actors = dao.findActorsByFilmId("" + film.getId());
 			film.setActors(actors);
