@@ -57,7 +57,7 @@ public class FilmController {
 		for (Film film : films) {
 			List<Actor> actors = dao.findActorsByFilmId("" + film.getId());
 			film.setActors(actors);
-			System.out.println(actors);
+			mv.addObject("actors", actors);
 		}
 		mv.addObject("film", films);
 		mv.setViewName("WEB-INF/keywordResults.jsp");
