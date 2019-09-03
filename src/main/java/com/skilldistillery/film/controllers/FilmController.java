@@ -64,7 +64,7 @@ public class FilmController {
 		return mv;
 	}
 
-	@RequestMapping(value="/addFilm",  method = RequestMethod.POST)
+	@RequestMapping(path="addfilm.do",  method = RequestMethod.POST)
 	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("film"	);

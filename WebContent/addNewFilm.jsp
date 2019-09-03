@@ -13,7 +13,7 @@
 <body>
 <h1>Add New Film</h1>
 
-  <form:form method="POST" action="/films/addFilm" modelAttribute="film">
+  <form:form method="POST" action="addfilm.do" modelAttribute="film">
 		
 		Title: <input type="text" path="title" required /><br>
 		Description: <input type="text"	path="description" /><br>

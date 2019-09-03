@@ -10,7 +10,7 @@
 <title>Add Film</title>
 </head>
 <body>
-  <form:form action="add.do" method="POST" modelAttribute="film">
+  <form:form action="]" method="GET" modelAttribute="film">
   	<div>
   	<%-- <form type="" --%>
   	</div>
