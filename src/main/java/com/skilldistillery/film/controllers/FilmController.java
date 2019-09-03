@@ -64,17 +64,16 @@ public class FilmController {
 		return mv;
 	}
 
-<<<<<<< HEAD
-	@RequestMapping(path = "addFilm.do", params="film",  method=RequestMethod.POST)
-	public ModelAndView addFilmToDB(Film film) {
-		ModelAndView mv = new ModelAndView();
-		film = dao.newFilm(film);
-=======
+//<<<<<<< HEAD
+//	@RequestMapping(path = "addFilm.do", params="film",  method=RequestMethod.POST)
+//	public ModelAndView addFilmToDB(Film film) {
+//		ModelAndView mv = new ModelAndView();
+//		film = dao.newFilm(film);
+//=======
 	@RequestMapping(path="addfilm.do",  method = RequestMethod.POST)
 	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("film"	);
->>>>>>> fe6132fe8d19d1b7d555cbb320db0da839d811d8
 		mv.setViewName("WEB-INF/addFilm.jsp");
 		return mv;
 	}

@@ -12,13 +12,12 @@
 </head>
 <body>
 <h1>Add New Film</h1>
-
+<%-- 
 <<<<<<< HEAD:WebContent/addnewfilm.html
   <form:form method="POST"
           action="addFilm.do" modelAttribute="film">
-=======
+======= --%>
   <form:form method="POST" action="addfilm.do" modelAttribute="film">
->>>>>>> fe6132fe8d19d1b7d555cbb320db0da839d811d8:WebContent/addNewFilm.jsp
 		
 		Title: <input type="text" path="title" required /><br>
 		Description: <input type="text"	path="description" /><br>
