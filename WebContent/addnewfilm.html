@@ -2,20 +2,53 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Add Film</title>
 </head>
 <body>
 <h1>Add New Film</h1>
-<a href="index.html">Home</a>
-<form: form>
 
-
-
-	<form action="addFilm.do" method="POST">
+  <form:form method="POST"
+          action="/spring-mvc-xml/addEmployee" modelAttribute="film">
 		
+		Title: <input type="text" name="title" required /><br>
+		Description: <input type="text"	name="description" /><br>
+		Release Year: <input type="number" name="releas_year" min="1950" max="2020" /><br>
+		Language
+		<select name="language">
+		<option value="English">English</option>
+		<option value="Italian">Italian</option>
+		<option value="Japanese">Japanese</option>
+		<option value="Mandarin">Mandarin</option>
+		<option value="French">French</option>
+		<option value="German">German</option>
+		</select><br>
+		Rental Duration: <input type="number" min="3" max="7" name="rental_duration" required/> <br>
+		Rental Rate
+		<select required>
+		<option value="0.99">0.99</option>
+		<option value="1.99">1.99</option>
+		<option value="2.99">2.99</option>
+		<option value="3.99">3.99</option>
+		<option value="4.99">4.99</option>
+		</select><br>
+		Length: <input type="number" name="length"	min="30" max="300"/> <br>
+		Replacement Cost: <input type="number" min="2.99" max="50.00" required/> <br>
+		Rating <select name="rating">
+  		<option value="G">G</option>
+ 		<option value="PG">PG</option>
+  		<option value="PG13">PG13</option>
+ 		<option value="NC17">NC-17</option>
+ 		<option value="R">R</option>
+		</select><br>
+		Special Features<br> 
+		<select name="special_features" multiple>
+		<option value="Deleted Scenes">Deleted Scenes</option>
+		<option value="Trailers">Trailers</option>
+		<option value="Commentaries">Commentaries</option>
+		<option value="Behind The Scenes">Behind The Scenes</option>
+		</select><br><br>
 		
-		
-		Title: <input type="text" name="title" /> 
-		<input type="submit" value="Add Film" />
+		<input type="submit" value="Submit" />  <input type="button" onclick="history.back()" value="Back">
+		</form:form> 
 </body>
 </html>

@@ -64,12 +64,12 @@ public class FilmController {
 		return mv;
 	}
 
-	@RequestMapping(path = "addFilm.do", method = RequestMethod.POST)
-	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
-		ModelAndView mv = new ModelAndView();
-
-		mv.setViewName("WEB-INF/addFilm.jsp");
-		return mv;
-	}
+//	@RequestMapping(path = "addFilm.do",  method = RequestMethod.POST)
+//	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
+//		ModelAndView mv = new ModelAndView();
+//		film
+//		mv.setViewName("WEB-INF/addFilm.jsp");
+//		return mv;
+//	}
 
 }

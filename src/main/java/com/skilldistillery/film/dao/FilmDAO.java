@@ -13,4 +13,5 @@ public interface FilmDAO {
 
 	public List<Film> findFilmByKeyWord(String keyWord);
 
+	public Film newFilm(Film film);
 }
