@@ -14,16 +14,22 @@
 	<c:choose>
 		<c:when test="${! empty film}">
 			<ul>
-					<h3>Film Details:</h3>
-					<li>"${film }"</li>
-					<h4>Actors in Film:</h4>
-					<c:forEach var="actor" items="${actors}">
-						<li>"${actor}"</li>
-					</c:forEach>
+				<h3>Film Details:</h3>
+				<li>"${film }"</li>
+				<h4>Actors in Film:</h4>
+				<c:forEach var="actor" items="${actors}">
+					<li>"${actor}"</li>
+				</c:forEach>
+				<br>
+				<form action=“UPDATEFILM.do” method=“GET”>
 					<br>
+					<button type=“submit”>Update/Delete Film</button>
+					<input type=“hidden” name=“id” value=“${film.id}” />
+				</form>
 			</ul>
 		</c:when>
 		<c:otherwise>
+
 			<p>No films found</p>
 		</c:otherwise>
 	</c:choose>
