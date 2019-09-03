@@ -5,8 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
@@ -243,6 +245,51 @@ public class FilmDAOImpl implements FilmDAO {
 
 		}
 		return actors;
+	}
+
+///////////////////////////////////////////////////////////////////////
+public Film newFilm(Film film) {
+	
+	String sql = "INSERT INTO film (title, description, release_year, language_id, rental_duration, length, replacement_cost, rating, special_features) VALUES ( ? , ? , ? , ? , ? , ? , ?, ?, ?);" ;
+	try {
+		// Opening connection to database
+		Connection conn = DriverManager.getConnection(URL, userName, password);
+		conn.setAutoCommit(false);
+		// preparing statement for database, set variable to question mark
+		PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+		stmt.setString(1, film.getTitle());
+		stmt.setString(2, film.getDescription());
+	     stmt.setInt(3, film.getReleaseYear());
+	     stmt.setInt(4, film.getId());
+	     stmt.setInt(5, film.getRentalDuration());
+	     stmt.setInt(6, film.getLength());
+	     stmt.setDouble(7, film.getReplacement());
+	     stmt.setString(8, film.getRating());
+	     stmt.setString(9, film.getSpecialFeatures());
+	     
+	     
+	      int uc = stmt.executeUpdate();
+	      System.out.println(uc + " film record created.");
+	      // Now get the auto-generated actor ID:
+	      ResultSet keys = stmt.getGeneratedKeys();
+	      while (keys.next()) {
+	          System.out.println("New actor ID: " + keys.getInt(1));
+	        }
+	      conn.commit();
+	      keys.close();
+	      conn.close();
+	
+	//SELECT LAST_INSERT_ID();
+	}
+	      catch (SQLException e) {
+	        e.printStackTrace();
+	      }
+	return film;
+	
+}
+	private void setString(int i, String string) {
+		// TODO Auto-generated method stub
+
 	}
 
 }

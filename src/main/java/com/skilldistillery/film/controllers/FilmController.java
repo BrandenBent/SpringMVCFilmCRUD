@@ -18,9 +18,9 @@ import com.skilldistillery.film.entities.Film;
 public class FilmController {
 	@Autowired
 	FilmDAO dao;
-	
+
 	@ModelAttribute("film")
-	  public Film initFilm() {
+	public Film initFilm() {
 		return new Film(0, null, null, 0, 0, null, null, null);
 	}
 
@@ -64,12 +64,12 @@ public class FilmController {
 		return mv;
 	}
 
-//	@RequestMapping(path = "addFilm.do", method = RequestMethod.POST)
-//	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
-//		ModelAndView mv = new ModelAndView();
-//		
-//		mv.setViewName("WEB-INF/addFilm.jsp");
-//		return mv;
-//	}
+	@RequestMapping(path = "addFilm.do", method = RequestMethod.POST)
+	public ModelAndView addFilmToDB(@ModelAttribute("film") Film film) {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("WEB-INF/addFilm.jsp");
+		return mv;
+	}
 
 }
