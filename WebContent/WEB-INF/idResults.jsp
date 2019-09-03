@@ -16,7 +16,8 @@
 	<c:choose>
 		<c:when test="${! empty film}">
 			<ul>
-				<c:forEach var="film" items="${film}">
+				<li>"${film }"</li>
+				<%-- <c:forEach var="film" items="${film}">
 					<h3>Film Details:</h3>
 					<li>${film}</li>
 					<h4>Actors in Film:</h4>
@@ -29,7 +30,7 @@
 						<button type="submit">Update/Delete Film</button>
 						<input type="hidden" name="id" value="${film.id}" />
 					</form>
-				</c:forEach>
+				</c:forEach> --%>
 			</ul>
 		</c:when>
 		<c:otherwise>

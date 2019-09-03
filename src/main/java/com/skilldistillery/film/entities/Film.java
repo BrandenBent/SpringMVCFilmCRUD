@@ -51,9 +51,6 @@ public class Film {
 
 	// ID OF FILM
 
-	public Film() {
-//		no arg for testing purposes
-	}
 
 	public int getId() {
 		return id;

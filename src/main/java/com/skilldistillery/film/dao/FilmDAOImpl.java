@@ -62,6 +62,7 @@ public class FilmDAOImpl implements FilmDAO {
 				String language = rs.getString("name");
 
 				List<Actor> actors = findActorsByFilmId(filmId);
+//				film.setActors(actors);
 
 				film = new Film(id, title, description, releaseYear, languageId, rating, language, actors);
 
@@ -111,6 +112,7 @@ public class FilmDAOImpl implements FilmDAO {
 				String language = rs.getString("name");
 
 				List<Actor> actors = findActorsByFilmId(id);
+				film.setActors(actors);
 
 				film = new Film(id, title, description, releaseYear, languageId, rating, language, actors);
 				films.add(film);
