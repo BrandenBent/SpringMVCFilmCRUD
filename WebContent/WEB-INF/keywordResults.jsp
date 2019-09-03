@@ -32,5 +32,13 @@
 			<p>No films found</p>
 		</c:otherwise>
 	</c:choose>
+	<c:forEach var="film" items="${film}">
+					<li>"${film.title }"<form action="UPDATEFILM.do" method="GET">
+		<br>
+		<button type="submit">Update/Delete Film</button>
+		<input type="hidden" name="id" value="${film.id}" />
+	</form></li>
+				</c:forEach>
+
 </body>
 </html>
