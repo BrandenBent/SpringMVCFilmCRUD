@@ -39,6 +39,16 @@
 		<input type="hidden" name="id" value="${film.id}" />
 	</form></li>
 				</c:forEach>
+				
+				
+				
+				
+		<h1>Actors for every film</h1>	
+		<c:forEach var="film" items="${film}">
+			<p>"${film.title}" ---Actors--- "${film.actors }"</p>
+		</c:forEach>	
+				
+				
 
 </body>
 </html>
