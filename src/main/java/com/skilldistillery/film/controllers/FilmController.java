@@ -53,4 +53,13 @@ public class FilmController {
 		return mv;
 	}
 
+	@RequestMapping(path = "addFilm.do", method = RequestMethod.POST)
+	public ModelAndView addFilmToDB() {
+		Film film = new Film();
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/addFilm.jsp");
+		mv.addObject("Film", film);
+		return mv;
+	}
+
 }
