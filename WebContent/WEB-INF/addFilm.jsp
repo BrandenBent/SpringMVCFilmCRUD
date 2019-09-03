@@ -11,7 +11,9 @@
 </head>
 <body>
   <form:form action="add.do" method="POST" modelAttribute="film">
-  
+  	<div>
+  	<%-- <form type="" --%>
+  	</div>
   </form:form>
 </body>
 </html>
